@@ -15,10 +15,11 @@ public class Student {
     // Constructors
     public Student() {}
  
-    public Student(String name, int age, int marks) {
+    public Student(int id,String name, int age, int marks) {
         this.name = name;
         this.age = age;
         this.marks = marks;
+        this.id=id;
     }
  
     // Getters & Setters
