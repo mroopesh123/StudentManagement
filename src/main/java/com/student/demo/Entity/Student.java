@@ -1,58 +1,49 @@
 package com.student.demo.Entity;
 
 import jakarta.persistence.*;
- 
+import jakarta.validation.constraints.*;
+import lombok.Data;
+
 @Entity
+@Data
 public class Student {
- 
+
     @Id
-    private int id;
- 
+    private Integer id;
+    @NotBlank(message = "Name must not be empty")
     private String name;
-    private int age;
-    private int marks;
- 
-    // Constructors
-    public Student() {}
- 
-    public Student(int id,String name, int age, int marks) {
-        this.name = name;
-        this.age = age;
-        this.marks = marks;
-        this.id=id;
-    }
- 
-    // Getters & Setters
-    public int getId() {
-        return id;
-    }
- 
-    public void setId(int id) {
-        this.id = id;
-    }
- 
-    public String getName() {
-        return name;
-    }
- 
-    public void setName(String name) {
-        this.name = name;
-    }
- 
-    public int getAge() {
-        return age;
-    }
- 
-    public void setAge(int age) {
-        this.age = age;
-    }
- 
-    public int getMarks() {
-        return marks;
-    }
- 
-    public void setMarks(int marks) {
-        this.marks = marks;
-    }
+    @NotNull(message = "Age is required")
+    @Min(value = 18, message = "Age must be at least 5")
+    @Max(value = 60, message = "Age must be less than 100")
+    private Integer age;
+    @NotNull(message = "Marks are required")
+    @Min(value = 0, message = "Marks cannot be less than 0")
+    @Max(value = 100, message = "Marks cannot be greater than 100")
+    private Integer marks;
 }
+
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

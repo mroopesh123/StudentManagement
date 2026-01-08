@@ -9,9 +9,9 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
  
     List<Student> findByName(String name);
  
-    List<Student> findByAge(int age);
+    List<Student> findByAge(Integer age);
  
-    List<Student> findByMarksGreaterThan(int marks);
+    List<Student> findByMarksGreaterThan(Integer marks);
  
-    List<Student> findByMarksLessThan(int marks);
+    List<Student> findByMarksLessThan(Integer marks);
 }
